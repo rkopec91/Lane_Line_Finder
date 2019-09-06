@@ -11830,7 +11830,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#importing some useful packages</span>
@@ -11856,7 +11856,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#reading in an image</span>
@@ -11888,13 +11888,13 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[2]:</div>
+<div class="prompt output_prompt">Out[31]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.image.AxesImage at 0x7fe01ed43978&gt;</pre>
+<pre>&lt;matplotlib.image.AxesImage at 0x7fe01421c320&gt;</pre>
 </div>
 
 </div>
@@ -11962,7 +11962,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -12033,7 +12033,7 @@ div#notebook {
     <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span>
     
     <span class="c1">#initialize the minimum y to the maximum possible</span>
-    <span class="n">y_min</span> <span class="o">=</span> <span class="n">height</span>
+    <span class="n">y_horizon</span> <span class="o">=</span> <span class="n">height</span>
     
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
@@ -12042,7 +12042,7 @@ div#notebook {
             <span class="c1"># b= y-mx</span>
             <span class="n">intercept</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">-</span> <span class="n">slope</span><span class="o">*</span><span class="n">x1</span>
 
-            <span class="k">if</span> <span class="n">slope</span> <span class="o">&lt;</span> <span class="mf">0.0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">slope</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">line_info</span><span class="p">[</span><span class="s2">&quot;left_slopes&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">slope</span><span class="p">)</span>
                 <span class="n">line_info</span><span class="p">[</span><span class="s2">&quot;left_intercepts&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">intercept</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
@@ -12050,31 +12050,31 @@ div#notebook {
                 <span class="n">line_info</span><span class="p">[</span><span class="s2">&quot;right_intercepts&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">intercept</span><span class="p">)</span>
             
             <span class="c1"># extends all lines towards the horizon</span>
-            <span class="n">y_min</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">y_min</span><span class="p">)</span>
+            <span class="n">y_horizon</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">y_horizon</span><span class="p">)</span>
             
-    <span class="k">if</span> <span class="n">line_info</span><span class="p">[</span><span class="s2">&quot;left_slopes&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">line_info</span><span class="p">[</span><span class="s2">&quot;left_intercepts&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">y_min</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">line_info</span><span class="p">[</span><span class="s2">&quot;left_slopes&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">line_info</span><span class="p">[</span><span class="s2">&quot;left_intercepts&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">y_horizon</span><span class="p">:</span>
         <span class="n">left_line_slope</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">line_info</span><span class="p">[</span><span class="s2">&quot;left_slopes&quot;</span><span class="p">])</span>
         <span class="n">left_line_intercept</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">line_info</span><span class="p">[</span><span class="s2">&quot;left_intercepts&quot;</span><span class="p">])</span>
         <span class="c1">#find the xmin and x max of the left lane using y=mx+b equation</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="c1">#x = (y-b)/m</span>
-            <span class="n">x_min_left_line</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">y_min</span> <span class="o">-</span> <span class="n">left_line_intercept</span><span class="p">)</span><span class="o">/</span><span class="n">left_line_slope</span><span class="p">)</span> 
+            <span class="n">x_min_left_line</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">y_horizon</span> <span class="o">-</span> <span class="n">left_line_intercept</span><span class="p">)</span><span class="o">/</span><span class="n">left_line_slope</span><span class="p">)</span> 
             <span class="n">x_max_left_line</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">height</span> <span class="o">-</span> <span class="n">left_line_intercept</span><span class="p">)</span><span class="o">/</span><span class="n">left_line_slope</span><span class="p">)</span>
             <span class="c1">#draw line on image</span>
-            <span class="n">cv2</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">x_min_left_line</span><span class="p">,</span> <span class="n">y_min</span><span class="p">),</span> <span class="p">(</span><span class="n">x_max_left_line</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span> <span class="n">color</span><span class="p">,</span> <span class="n">thickness</span><span class="p">)</span>
+            <span class="n">cv2</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">x_min_left_line</span><span class="p">,</span> <span class="n">y_horizon</span><span class="p">),</span> <span class="p">(</span><span class="n">x_max_left_line</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span> <span class="n">color</span><span class="p">,</span> <span class="n">thickness</span><span class="p">)</span>
         <span class="k">except</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Found NaN in left line x calculation.&quot;</span><span class="p">)</span>
     
-    <span class="k">if</span> <span class="n">line_info</span><span class="p">[</span><span class="s2">&quot;right_slopes&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">line_info</span><span class="p">[</span><span class="s2">&quot;right_intercepts&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">y_min</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">line_info</span><span class="p">[</span><span class="s2">&quot;right_slopes&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">line_info</span><span class="p">[</span><span class="s2">&quot;right_intercepts&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">y_horizon</span><span class="p">:</span>
         <span class="n">right_line_slope</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">line_info</span><span class="p">[</span><span class="s2">&quot;right_slopes&quot;</span><span class="p">])</span>
         <span class="n">right_line_intercept</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">line_info</span><span class="p">[</span><span class="s2">&quot;right_intercepts&quot;</span><span class="p">])</span>
         <span class="c1">#find the xmin and x max of the right lane using y=mx+b equation</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="c1">#x = (y-b)/m</span>
-            <span class="n">x_min_right_line</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">y_min</span> <span class="o">-</span> <span class="n">right_line_intercept</span><span class="p">)</span><span class="o">/</span><span class="n">right_line_slope</span><span class="p">)</span> 
+            <span class="n">x_min_right_line</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">y_horizon</span> <span class="o">-</span> <span class="n">right_line_intercept</span><span class="p">)</span><span class="o">/</span><span class="n">right_line_slope</span><span class="p">)</span> 
             <span class="n">x_max_right_line</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">height</span> <span class="o">-</span> <span class="n">right_line_intercept</span><span class="p">)</span><span class="o">/</span><span class="n">right_line_slope</span><span class="p">)</span>
             <span class="c1">#draw line on image</span>
-            <span class="n">cv2</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">x_min_right_line</span><span class="p">,</span> <span class="n">y_min</span><span class="p">),</span> <span class="p">(</span><span class="n">x_max_right_line</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span>  <span class="n">color</span><span class="p">,</span> <span class="n">thickness</span><span class="p">)</span>
+            <span class="n">cv2</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">x_min_right_line</span><span class="p">,</span> <span class="n">y_horizon</span><span class="p">),</span> <span class="p">(</span><span class="n">x_max_right_line</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span>  <span class="n">color</span><span class="p">,</span> <span class="n">thickness</span><span class="p">)</span>
         <span class="k">except</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Found NaN in right line x calculation.&quot;</span><span class="p">)</span>
 
@@ -12123,7 +12123,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -12140,7 +12140,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[11]:</div>
+<div class="prompt output_prompt">Out[33]:</div>
 
 
 
@@ -12180,7 +12180,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Build your pipeline that will draw lane lines on the test_images</span>
@@ -12222,7 +12222,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;test_images/&#39;</span><span class="p">):</span>
@@ -12422,7 +12422,7 @@ imageio.plugins.ffmpeg.download()</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import everything needed to edit/save/watch video clips</span>
@@ -12437,7 +12437,7 @@ imageio.plugins.ffmpeg.download()</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">process_image</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
@@ -12465,7 +12465,7 @@ imageio.plugins.ffmpeg.download()</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">white_output</span> <span class="o">=</span> <span class="s1">&#39;test_output/solidWhiteRight.mp4&#39;</span>
@@ -12493,7 +12493,7 @@ imageio.plugins.ffmpeg.download()</code></pre>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>t:   5%|▍         | 11/221 [00:00&lt;00:02, 102.48it/s, now=None]</pre>
+<pre>t:   5%|▍         | 11/221 [00:00&lt;00:01, 107.00it/s, now=None]</pre>
 </div>
 </div>
 
@@ -12528,8 +12528,8 @@ Moviepy - Writing video test_output/solidWhiteRight.mp4
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Moviepy - Done !
 Moviepy - video ready test_output/solidWhiteRight.mp4
-CPU times: user 2.92 s, sys: 823 ms, total: 3.74 s
-Wall time: 5.91 s
+CPU times: user 2.82 s, sys: 864 ms, total: 3.68 s
+Wall time: 5.84 s
 </pre>
 </div>
 </div>
@@ -12549,7 +12549,7 @@ Wall time: 5.91 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
@@ -12569,7 +12569,7 @@ Wall time: 5.91 s
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[17]:</div>
+<div class="prompt output_prompt">Out[39]:</div>
 
 
 
@@ -12608,7 +12608,7 @@ Wall time: 5.91 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">yellow_output</span> <span class="o">=</span> <span class="s1">&#39;test_output/solidYellowLeft.mp4&#39;</span>
@@ -12636,7 +12636,7 @@ Wall time: 5.91 s
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>t:   2%|▏         | 11/681 [00:00&lt;00:06, 105.23it/s, now=None]</pre>
+<pre>t:   2%|▏         | 11/681 [00:00&lt;00:06, 104.16it/s, now=None]</pre>
 </div>
 </div>
 
@@ -12671,8 +12671,8 @@ Moviepy - Writing video test_output/solidYellowLeft.mp4
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Moviepy - Done !
 Moviepy - video ready test_output/solidYellowLeft.mp4
-CPU times: user 9.12 s, sys: 2.76 s, total: 11.9 s
-Wall time: 17.7 s
+CPU times: user 9.05 s, sys: 2.79 s, total: 11.8 s
+Wall time: 17.8 s
 </pre>
 </div>
 </div>
@@ -12683,7 +12683,7 @@ Wall time: 17.7 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
@@ -12703,7 +12703,7 @@ Wall time: 17.7 s
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[19]:</div>
+<div class="prompt output_prompt">Out[41]:</div>
 
 
 
@@ -12741,7 +12741,7 @@ Wall time: 17.7 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">challenge_output</span> <span class="o">=</span> <span class="s1">&#39;test_output/challenge.mp4&#39;</span>
@@ -12769,7 +12769,7 @@ Wall time: 17.7 s
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>t:   3%|▎         | 7/251 [00:00&lt;00:03, 61.79it/s, now=None]</pre>
+<pre>t:   3%|▎         | 7/251 [00:00&lt;00:03, 63.02it/s, now=None]</pre>
 </div>
 </div>
 
@@ -12793,7 +12793,7 @@ Found NaN in right line x calculation.
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>t:  10%|▉         | 25/251 [00:00&lt;00:03, 57.83it/s, now=None]</pre>
+<pre>t:  10%|▉         | 25/251 [00:00&lt;00:03, 58.55it/s, now=None]</pre>
 </div>
 </div>
 
@@ -12817,7 +12817,7 @@ Found NaN in right line x calculation.
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>t:  16%|█▋        | 41/251 [00:00&lt;00:04, 51.65it/s, now=None]</pre>
+<pre>t:  17%|█▋        | 42/251 [00:00&lt;00:03, 53.79it/s, now=None]</pre>
 </div>
 </div>
 
@@ -12841,7 +12841,7 @@ Found NaN in right line x calculation.
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>t:  18%|█▊        | 46/251 [00:00&lt;00:04, 51.01it/s, now=None]</pre>
+<pre>t:  19%|█▊        | 47/251 [00:00&lt;00:04, 48.86it/s, now=None]</pre>
 </div>
 </div>
 
@@ -12862,29 +12862,7 @@ Found NaN in right line x calculation.
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>t:  20%|██        | 51/251 [00:01&lt;00:07, 25.48it/s, now=None]</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Found NaN in right line x calculation.
-Found NaN in right line x calculation.
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>t:  22%|██▏       | 55/251 [00:01&lt;00:07, 25.75it/s, now=None]</pre>
+<pre>t:  21%|██        | 52/251 [00:01&lt;00:07, 25.82it/s, now=None]</pre>
 </div>
 </div>
 
@@ -12906,7 +12884,7 @@ Found NaN in right line x calculation.
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>t:  27%|██▋       | 68/251 [00:02&lt;00:08, 22.56it/s, now=None]</pre>
+<pre>t:  22%|██▏       | 56/251 [00:01&lt;00:08, 23.65it/s, now=None]</pre>
 </div>
 </div>
 
@@ -12928,7 +12906,29 @@ Found NaN in right line x calculation.
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>t:  29%|██▉       | 74/251 [00:02&lt;00:09, 19.38it/s, now=None]</pre>
+<pre>t:  26%|██▋       | 66/251 [00:02&lt;00:09, 20.29it/s, now=None]</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Found NaN in right line x calculation.
+Found NaN in right line x calculation.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>t:  30%|██▉       | 75/251 [00:02&lt;00:08, 20.52it/s, now=None]</pre>
 </div>
 </div>
 
@@ -12949,7 +12949,7 @@ Found NaN in right line x calculation.
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>t:  31%|███       | 77/251 [00:02&lt;00:10, 15.89it/s, now=None]</pre>
+<pre>t:  31%|███       | 78/251 [00:02&lt;00:08, 20.19it/s, now=None]</pre>
 </div>
 </div>
 
@@ -12970,7 +12970,7 @@ Found NaN in right line x calculation.
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>t:  46%|████▌     | 116/251 [00:04&lt;00:06, 19.60it/s, now=None]</pre>
+<pre>t:  45%|████▌     | 113/251 [00:04&lt;00:06, 20.50it/s, now=None]</pre>
 </div>
 </div>
 
@@ -12991,7 +12991,7 @@ Found NaN in right line x calculation.
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>t:  57%|█████▋    | 143/251 [00:06&lt;00:08, 13.44it/s, now=None]</pre>
+<pre>t:  58%|█████▊    | 145/251 [00:06&lt;00:06, 17.20it/s, now=None]</pre>
 </div>
 </div>
 
@@ -13012,7 +13012,7 @@ Found NaN in right line x calculation.
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>t:  65%|██████▌   | 164/251 [00:07&lt;00:05, 15.96it/s, now=None]</pre>
+<pre>t:  66%|██████▌   | 165/251 [00:07&lt;00:05, 15.15it/s, now=None]</pre>
 </div>
 </div>
 
@@ -13034,7 +13034,7 @@ Found NaN in right line x calculation.
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>t:  67%|██████▋   | 169/251 [00:08&lt;00:04, 17.47it/s, now=None]</pre>
+<pre>t:  67%|██████▋   | 169/251 [00:07&lt;00:05, 15.21it/s, now=None]</pre>
 </div>
 </div>
 
@@ -13055,7 +13055,7 @@ Found NaN in right line x calculation.
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>t:  69%|██████▉   | 173/251 [00:08&lt;00:05, 13.94it/s, now=None]</pre>
+<pre>t:  69%|██████▊   | 172/251 [00:08&lt;00:05, 15.08it/s, now=None]</pre>
 </div>
 </div>
 
@@ -13077,7 +13077,7 @@ Found NaN in right line x calculation.
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>t:  84%|████████▍ | 212/251 [00:11&lt;00:02, 16.69it/s, now=None]</pre>
+<pre>t:  84%|████████▍ | 211/251 [00:10&lt;00:02, 15.51it/s, now=None]</pre>
 </div>
 </div>
 
@@ -13110,8 +13110,8 @@ Found NaN in right line x calculation.
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Moviepy - Done !
 Moviepy - video ready test_output/challenge.mp4
-CPU times: user 6.16 s, sys: 1.5 s, total: 7.66 s
-Wall time: 14.7 s
+CPU times: user 6.23 s, sys: 1.47 s, total: 7.7 s
+Wall time: 14.1 s
 </pre>
 </div>
 </div>
@@ -13122,7 +13122,7 @@ Wall time: 14.7 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
@@ -13142,7 +13142,7 @@ Wall time: 14.7 s
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[21]:</div>
+<div class="prompt output_prompt">Out[43]:</div>
 
 
 
