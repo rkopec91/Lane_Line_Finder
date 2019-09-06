@@ -65,4 +65,4 @@ One potential shortcoming would be when there are sharp turns.  This works on hi
 
 ### 3. Suggest possible improvements to your pipeline
 
-There are a few things I would like to look into.  Maybe using deep learning to detect lines on the street?  It could also help with detecting lanes when there are no lines, or lines that are covered in snow.  It could also help us navigate in urban areas, not just highways.  I do know there are also other hough transforms that could be applied to this.  Maybe the circle hough transform could help detect curves in the lines.
+There are a few things I would like to look into.  Maybe using deep learning to detect lines on the street?  It could also help with detecting lanes when there are no lines, or lines that are covered in snow.  It could also help us navigate in urban areas, not just highways.  I do know there are also other hough transforms that could be applied to this.  Maybe the circle hough transform could help detect curves in the lines.  Also, doing a transformation on the image could help me get a good top down view on the lanes.
